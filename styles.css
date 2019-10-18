@@ -1,12 +1,12 @@
 body {
     
-    background-image: url("pokegrass.jpg");
-      min-height: 500px;
+    background-image: url("pokeelements.jpg");
+    background-color: black;
+    min-height: 500px;
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
-  background-size: cover;
-  background-size: cover;
+
     text-align: center;
     font-family: serif;
     color: yellow;
@@ -24,7 +24,8 @@ body {
 }
 
 .txt{
-        background: #124EB6;
+        /*background: #124EB6;*/
+        background: black;
     position: sticky;
     top: 3.5rem;
     margin-left: 575px;
