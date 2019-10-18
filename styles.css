@@ -1,0 +1,30 @@
+body {
+    
+    background-image: url("pokegrass.jpg");
+      min-height: 500px;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-size: cover;
+    text-align: center;
+    font-family: serif;
+    color: yellow;
+}
+#footer{
+    
+    
+    position: fixed;
+    bottom: 0 !important;
+    width: 100% !important;
+    height: 8rem !important; 
+    text-align: center;
+    font-weight: bold;
+
+}
+
+.txt{
+        background: #124EB6;
+    position: sticky;
+    top: 3.5rem;
+}

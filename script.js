@@ -7,34 +7,37 @@ document.getElementById("pokeSubmit").addEventListener("click", function(event) 
       
 
  /* global fetch */
-    const url = 'https://pokeapi.co/api/v2/pokemon/ditto/';
+    const url = 'https://pokeapi.co/api/v2/pokemon/' + value;
 
         fetch(url)
 
           .then(function(response) {
-
+            console.log("hello");
             return response.json();
 
           }).then(function(json) {
 
             console.log(json);
-
-          });
-//       let results = "";
-//       results += '<h2>Weather in ' + json.name + "</h2>";
-// //       for (let i=0; i < json.weather.length; i++) {
-// 	results += '<img src="http://pokeapi.co/media/sprites/pokemon/shiny/12.png"/>';
-// //       }
-//     //   results += '<h2>' + json.abilities..name + " &deg;F</h2>";
-//     //   results += "<p>";
-// //       for (let i=0; i < json.weather.length; i++) {
-// // 	results += json.weather[i].description;
-// // 	if (i !== json.weather.length - 1)
-// // 	  results += ", ";
-// //       }
-//     //   results += "</p>";
-//       document.getElementById("pokeResults").innerHTML = results;
-   
-//    });
+            console.log(json.name);
+            
+            var pokeinfo='';
+       let results = json;
+      pokeinfo += '<h2 class="txt">Name:   ' + results.name + "<br></h2>";
+      pokeinfo += '<h2 class="txt">Type:   ' + results.types[0].type.name + "<br></h2>";
+      pokeinfo += '<h2 class="txt">Top Move(s):<br><br>'+ results.moves[0].move.name+'<br>';
+      
+        for (let i=1; i < results.moves.length; i++) {
+          pokeinfo +=results.moves[i].move.name+'<br>';
+          if(i == 3){
+            i = results.moves.length;
+          }
+        }
+        pokeinfo += '</h2>';
+      
+       pokeinfo += '<img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/' + results.id + '.png" height="400" width="400"/>';
     
+       document.getElementById("pokeResults").innerHTML = pokeinfo;
+
+  });
+
 });
